@@ -2,16 +2,32 @@ package com.example.javafxexample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private TextField textField;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText(String.format("Hello %s!", textField.getText()));
+    private Label counterLabel;
+
+    private int count = 0;
+
+    @FXML
+    public void initialize() {
+        counterLabel.setText("0");
+    }
+
+    @FXML
+    protected void onIncrement() {
+        counterLabel.setText(String.valueOf(++count));
+    }
+
+    @FXML
+    protected void onDecrement() {
+        counterLabel.setText(String.valueOf(--count));
+    }
+
+    @FXML
+    protected void onReset() {
+        count = 0;
+        counterLabel.setText("0");
     }
 }

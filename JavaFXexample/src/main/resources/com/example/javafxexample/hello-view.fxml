@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.TextField?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="CENTER" spacing="24.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.javafxexample.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
     </padding>
 
-    <HBox alignment="CENTER" spacing="10.0">
-        <Label text="Name:"/>
-        <TextField fx:id="textField"/>
-    </HBox>
+    <Label text="Counter" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Label fx:id="counterLabel" text="0"
+           style="-fx-font-size: 64px; -fx-font-weight: bold; -fx-text-fill: #2c7be5;"/>
+
+    <HBox alignment="CENTER" spacing="16.0">
+        <Button text="−" onAction="#onDecrement"
+                style="-fx-font-size: 18px; -fx-min-width: 60px; -fx-min-height: 40px;"/>
+        <Button text="Reset" onAction="#onReset"
+                style="-fx-font-size: 14px; -fx-min-width: 70px; -fx-min-height: 40px;"/>
+        <Button text="+" onAction="#onIncrement"
+                style="-fx-font-size: 18px; -fx-min-width: 60px; -fx-min-height: 40px;"/>
+    </HBox>
 </VBox>
