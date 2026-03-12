@@ -21,10 +21,10 @@ public class Coordinates {
 
     @Override
     public boolean equals(Object o){
-        if (this == o) returns true;
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Coordinates that = that.x &&
-                y == that.y;
+        Coordinates that = (Coordinates) o;
+        return x == that.x && y == that.y;
     }
 
     @Override
